@@ -53,11 +53,11 @@ Copy-Item -Path "$desktop\temp\mona.py" -Destination "C:\Program Files (x86)\Imm
 
 # Setting up Firewall Rules to block all incoming connections except that of pwn binary's
 
-#New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -LocalPort 0-9998,10000-65535 -Action Block 
-#New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -LocalPort 9999 -Action Allow
+New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -LocalPort 0-9998,10000-65535 -Action Block 
+New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -LocalPort 9999 -Action Allow
 
-#New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -RemotePort 0-9998,10000-65535 -Action Block 
-#New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -RemotePort 9999 -Action Allow
+New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -RemotePort 0-9998,10000-65535 -Action Block 
+New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -RemotePort 9999 -Action Allow
 
 # Allowing our binary to connections
 
@@ -67,7 +67,6 @@ New-NetFirewallRule -DisplayName "Outbound to pwn binary" -Program "$desktop\pwn
 
 # Almost set
 # Let's Monitor our pwn binary
-
 
 Try
 {

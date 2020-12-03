@@ -10,10 +10,10 @@ $desktop = [System.Environment]::GetFolderPath("Desktop")
 $debugger_url = "https://drive.google.com/uc?id=1jnJQ9AADa31O8lohkMuPMzDtq1wfoyJF&export=download"
 $python2_url = "https://www.python.org/ftp/python/2.7/python-2.7.msi"
 $monapy_url = "https://drive.google.com/u/1/uc?id=1cOSNKiwrc_EqRV92MQzlz8R_8hdMW0NZ&export=download"
-$vuln_exe = "https://github.com/Nikhilthegr8/custom_vulnerable_executables/raw/master/custom_vulnerable_executables/Mount%20VANILLA/mount%20vanilla.exe"
+$vuln_exe = "https://github.com/Nikhilthegr8/custom_vulnerable_executables/raw/master/custom_vulnerable_executables/Mr.NOPs/mr.nops.exe"
 $pattern_generator = "https://drive.google.com/u/1/uc?id=1j2jgtE_okOTOzQIfr7QQm4AwoQ9-6xSK&export=download"
 $python3_url = "https://www.python.org/ftp/python/3.9.0/python-3.9.0-amd64.exe"
-$essfuncdll = "https://github.com/Nikhilthegr8/custom_vulnerable_executables/raw/master/custom_vulnerable_executables/Mount%20VANILLA/essfunc.dll"
+$essfuncdll = "https://github.com/Nikhilthegr8/custom_vulnerable_executables/raw/master/custom_vulnerable_executables/Mr.NOPs/essfunc.dll"
 
 
 # Downloading Resources to user's Desktop
@@ -53,11 +53,11 @@ Copy-Item -Path "$desktop\temp\mona.py" -Destination "C:\Program Files (x86)\Imm
 
 # Setting up Firewall Rules to block all incoming connections except that of pwn binary's
 
-New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -LocalPort 0-9998,10000-65535 -Action Block 
-New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -LocalPort 9999 -Action Allow
+#New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -LocalPort 0-9998,10000-65535 -Action Block 
+#New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -LocalPort 9999 -Action Allow
 
-New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -RemotePort 0-9998,10000-65535 -Action Block 
-New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -RemotePort 9999 -Action Allow
+#New-NetFirewallRule -DisplayName "Block other ports" -Direction Inbound -RemotePort 0-9998,10000-65535 -Action Block 
+#New-NetFirewallRule -DisplayName "Allowing pwn binary port" -Direction Inbound -RemotePort 9999 -Action Allow
 
 # Allowing our binary to connections
 
